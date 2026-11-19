@@ -1,0 +1,17 @@
+
+import api from "./axios";
+
+// Get All Products
+export const getProducts = (params = {}) => {
+  return api.get("/products", { params });
+};
+
+// Search Products
+export const searchProducts = (params = {}) => {
+  return api.get("/products/search", { params });
+};
+
+// Get Single Product
+export const getProductById = (id) => {
+  return api.get(`/products/${id}`);
+};
