@@ -3,7 +3,11 @@ import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import { getProducts } from "./api/products.api";
 import ProductDetails from "./pages/ProductDetails";
 import EditProduct from "./pages/EditProduct";
+import Checkout from "./pages/Checkout";
+import OrderSuccess from "./pages/OrderSuccess";
+import OrderTracking from "./pages/OrderTracking";
 import "./App.css";
+import "./styles/checkout.css";
 
 function ProductsQuickBar() {
   const [products, setProducts] = useState([]);
@@ -141,6 +145,20 @@ function App() {
           <Route path="/" element={<HomePlaceholder />} />
           <Route path="/products/:id" element={<ProductDetails />} />
           <Route path="/products/edit/:id" element={<EditProduct />} />
+          <Route
+            path="/checkout"
+            element={<Checkout />}
+          />
+
+          <Route
+            path="/order-success/:orderId"
+            element={<OrderSuccess />}
+          />
+
+          <Route
+            path="/orders/:orderId"
+            element={<OrderTracking />}
+          />
         </Routes>
       </div>
     </BrowserRouter>
